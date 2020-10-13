@@ -1,0 +1,32 @@
+.header {
+  position: fixed;
+  top: 48px;
+  width: 100%;
+  z-index: 10;
+  left: 0;
+  transition: 0.3s;
+  &.active {
+    top: 0px;
+    padding: 15px 0;
+    background: rgba(35, 46, 56, 0.85);
+    .logo {
+      width: 141px;
+    }
+  }
+  .logo {
+    transition: 0.3s;
+    width: 420px;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__link {
+    text-transform: uppercase;
+    font-family: CR;
+    & + & {
+      margin-left: 40px;
+    }
+  }
+}

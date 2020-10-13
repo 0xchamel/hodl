@@ -1,0 +1,55 @@
+@import '../../styles/var';
+
+.media {
+  &__title {
+    font-size: 25px;
+    line-height: 33px;
+    font-family: PB;
+    color: $black;
+    max-width: 580px;
+    margin: 0 auto 30px;
+    text-align: center;
+  }
+  &__box {
+    max-width: 850px;
+    height: 445px;
+    margin: 0 auto;
+    position: relative;
+  }
+  &__btn {
+    width: 200px;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    img {
+      margin-left: auto;
+      display: block;
+    }
+    p {
+      font-size: 15px;
+      position: absolute;
+      top: 112%;
+      left: 0;
+      line-height: 20px;
+      color: #685a5a;
+      font-family: PB;
+    }
+    &--prev {
+      right: calc(100% + 40px);
+      img {
+        margin-right: auto;
+        margin-left: 0;
+      }
+    }
+    &--next {
+      left: calc(100% + 40px);
+      text-align: right;
+    }
+  }
+  .swiper-container {
+    height: 100%;
+    width: 100%;
+  }
+}

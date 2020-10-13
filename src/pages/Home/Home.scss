@@ -1,0 +1,102 @@
+@import '../../styles/var';
+.home {
+  &__main {
+    height: 100vh;
+    background: url(../../assets/img/main-home.jpg);
+    background-size: cover;
+    padding-top: 15vw;
+    .h1 {
+      max-width: 860px;
+      color: #ffffff;
+    }
+  }
+  &__inf {
+    background: url(../../assets/img/inf-home.jpg);
+    background-size: cover;
+    padding: 11vw 0 0;
+    height: 100vh;
+    text-align: center;
+    p {
+      max-width: 1000px;
+      margin: 0 auto 75px;
+      font-family: PR;
+      font-size: 40px;
+      line-height: 53px;
+      span {
+        color: $yellow;
+      }
+    }
+  }
+  &__portfolio {
+    &-row {
+      max-width: 1370px !important;
+    }
+    &-box {
+      display: grid;
+      grid-template-columns: repeat(4, 320px);
+      grid-column-gap: 30px;
+      margin-top: 50px;
+    }
+    &-card {
+      &-text {
+        display: flex;
+        align-items: center;
+        font-family: PR;
+        font-size: 20px;
+        line-height: 40px;
+        color: $black;
+        margin-top: 5px;
+        img {
+          margin-left: 15px;
+        }
+      }
+      &-box {
+        display: flex;
+        position: relative;
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        height: 450px;
+        overflow: hidden;
+        &--reverse {
+          justify-content: flex-start;
+          .home__portfolio-card-content {
+            flex-direction: column-reverse;
+            p {
+              margin-top: 0;
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+      &-bg {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &-content {
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        p {
+          font-family: PB;
+          font-size: 40px;
+          line-height: 40px;
+          max-width: 225px;
+          text-align: right;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+  &__media {
+    &-video {
+      margin-top: 50px;
+      height: calc(100vh - 58px);
+    }
+  }
+}

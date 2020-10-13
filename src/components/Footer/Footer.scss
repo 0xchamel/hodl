@@ -1,0 +1,38 @@
+.footer {
+  background: #202a33;
+  padding: 25px 0 35px;
+  width: 100%;
+  &__row {
+    max-width: 1370px !important;
+  }
+  &__box {
+    display: flex;
+    align-items: center;
+    &-top {
+      justify-content: space-between;
+      span,
+      a {
+        width: 170px;
+        font-family: CR;
+        font-size: 16px;
+        line-height: 22px;
+        color: #ffffff;
+        opacity: 0.7;
+        text-align: right;
+      }
+      img {
+        width: 160px;
+      }
+    }
+    &-bottom {
+      width: fit-content;
+      margin: 30px auto 0;
+      a + a {
+        margin-left: 45px;
+      }
+      a {
+        opacity: 0.5;
+      }
+    }
+  }
+}
