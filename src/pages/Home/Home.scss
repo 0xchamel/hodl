@@ -26,6 +26,13 @@
         color: $yellow;
       }
     }
+
+    &--arrow {
+      transform: rotate(90deg);
+      margin-top: 300px;
+      cursor: pointer;
+    
+    }
   }
   &__portfolio {
     &-row {
