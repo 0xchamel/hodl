@@ -58,7 +58,8 @@ const MediaSlider = () => {
 
     return (
         <section className="media">
-            <div className="media__title">{activeTitle}</div>
+            
+            <div className="media__title media__title--desktop">{activeTitle}</div>
 
             <div className="media__box">
                 <Swiper
@@ -76,13 +77,18 @@ const MediaSlider = () => {
                         </SwiperSlide>;
                     })}
                 </Swiper>
-                <div className="media__btn media__btn--prev" onClick={() => swiper.slidePrev()}>
-                    <img src={arrowPrevImg} alt="" />
-                    <p>{leftTitle}</p>
-                </div>
-                <div className="media__btn media__btn--next" onClick={() => swiper.slideNext()}>
-                    <img src={arrowNextImg} alt="" />
-                    <p>{rightTitle}</p>
+                <div className="media__btn--container">
+                    <div className="media__btn media__btn--prev" onClick={() => swiper.slidePrev()}>
+                        <img src={arrowPrevImg} alt="" />
+                        <p>{leftTitle}</p>
+                    </div>
+
+                    <div className="media__title media__title--mobile">{activeTitle}</div>
+                    
+                    <div className="media__btn media__btn--next" onClick={() => swiper.slideNext()}>
+                        <img src={arrowNextImg} alt="" />
+                        <p>{rightTitle}</p>
+                    </div>
                 </div>
             </div>
         </section>

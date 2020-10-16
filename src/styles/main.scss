@@ -95,3 +95,22 @@ section {
     padding-top: 0;
   }
 }
+
+@media only screen and (max-width: 600px) {
+ .h2 {
+   &--decor {
+    font-size: 30px;
+    line-height: 40px;
+    &::before {
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+    &::after {
+      content: '';
+      margin-left: 10px;
+      margin-top: 5px;
+    }
+   }
+
+ }
+}

@@ -5,6 +5,9 @@
   z-index: 10;
   left: 0;
   transition: 0.3s;
+  &__hamburger {
+    display: none;
+  }
   &.active {
     top: 0px;
     padding: 15px 0;
@@ -27,6 +30,53 @@
     font-family: CR;
     & + & {
       margin-left: 40px;
+    }
+  }
+}
+
+.drawer {
+  &__links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link {
+
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .header {
+    top: 10px;
+    left: 0px;
+    max-width: 100%;
+    .logo {
+      padding-left: 20px;
+      width: 250px;
+    }
+
+    &.active {
+      .logo {
+        width: 250px;
+      }
+    }
+
+    &__hamburger {
+      display: block;
+      margin-right: 20px;
+      background: none;
+      border: none;
+      
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &__links {
+      display: none;
+
     }
   }
 }

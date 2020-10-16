@@ -47,7 +47,6 @@ const HomePage = () => {
 				<div className="row">
 					<div className="title-top">Dragon’s Vault</div>
 					<h1 className="h1">Safeguarding Humanity’s Financial Well-Being</h1>
-
 					<img onClick={() => executeScroll(mainRef)} className="home__inf--arrow" src={arrowBottom} alt="" />
 				</div>
 			</div>

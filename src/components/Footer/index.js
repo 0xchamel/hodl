@@ -38,6 +38,7 @@ const Footer = () => {
                     <img src={logoImg} alt="" />
                     <a href={pdf} target="blank">Privacy Policy</a>
                 </div>
+                
                 <div className="footer__box footer__box-bottom">
                     {
                         socials.map((item, index) => {

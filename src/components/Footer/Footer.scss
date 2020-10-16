@@ -36,3 +36,30 @@
     }
   }
 }
+
+
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    &:nth-child(1) {
+      order: 1;
+    }
+    &:nth-child(2) {
+      order: 2;
+    }
+    &__box {
+      
+      span {
+        order: 3
+      }
+
+      img {
+        order: 1
+      }
+
+      a {
+        order: 1
+      }
+    }
+  }
+}
