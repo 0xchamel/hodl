@@ -10,6 +10,7 @@ import decor_1 from '../../assets/img/decor/1.svg';
 import portfolioBtnImg from '../../assets/img/portfolio/btn.svg';
 import arrowBottom from '../../assets/img/arrow-next.svg';
 import portfolioArrowImg from '../../assets/img/portfolio/arrow.svg';
+import { ERefs } from './refs.enum';
 
 const scrollToRef = (ref) =>
 	window.scrollTo({
@@ -39,7 +40,23 @@ const HomePage = () => {
 
 	const mainRef = useRef(null);
 	const portfolioRef = useRef(null);
-	const executeScroll = (reference) => scrollToRef(reference);
+	const mediaRef = useRef(null);
+	const teamRef = useRef(null);
+
+	const executeScroll = (type) => {
+		switch (type) {
+			case ERefs.Home:
+				return scrollToRef(mainRef);
+			case ERefs.Profile:
+				return scrollToRef(mediaRef);
+			case ERefs.Media:
+				return scrollToRef(mediaRef);
+			case ERefs.Team:
+				return scrollToRef(mediaRef);
+			default:
+				return;
+		}
+	};
 
 	return (
 		<div className="home">
@@ -47,7 +64,12 @@ const HomePage = () => {
 				<div className="row">
 					<div className="title-top">Dragon’s Vault</div>
 					<h1 className="h1">Safeguarding Humanity’s Financial Well-Being</h1>
-					<img onClick={() => executeScroll(mainRef)} className="home__inf--arrow" src={arrowBottom} alt="" />
+					<img
+						onClick={() => executeScroll(ERefs.Home)}
+						className="home__inf--arrow"
+						src={arrowBottom}
+						alt=""
+					/>
 				</div>
 			</div>
 
@@ -61,7 +83,7 @@ const HomePage = () => {
 				<img src={decor_1} alt="" />
 				<div>
 					<img
-						onClick={() => executeScroll(portfolioRef)}
+						onClick={() => executeScroll(ERefs.Profile)}
 						className="home__inf--arrow"
 						src={arrowBottom}
 						alt=""
@@ -69,7 +91,7 @@ const HomePage = () => {
 				</div>
 			</div>
 
-			<section className="home__portfolio" ref={portfolioRef}>
+			<section id={'portfolio'} className="home__portfolio" ref={portfolioRef}>
 				<div className="row home__portfolio-row">
 					<h2 className="home__portfolio-title h2 h2--decor">Portfolio</h2>
 					<div className="home__portfolio-box">
@@ -101,10 +123,11 @@ const HomePage = () => {
 					</div>
 				</div>
 			</section>
-			<section className="home__media">
+			<section id={'media'} className="home__media" ref={mediaRef}>
 				<div className="h2 home__media-title h2--decor">Media</div>
 				<div className="home__media-video">
 					<iframe
+						title="Media video"
 						frameBorder="0"
 						allowFullScreen=""
 						width="100%"
@@ -114,7 +137,9 @@ const HomePage = () => {
 				</div>
 			</section>
 			<MediaSlider />
-			<Team />
+			<div id={'team'} ref={teamRef}>
+				<Team />
+			</div>
 		</div>
 	);
 };

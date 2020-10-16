@@ -71,7 +71,7 @@ const MediaSlider = () => {
                 >
                     {videos.map((slide, index) => {
                         return <SwiperSlide key={slide.video} virtualIndex={index}>
-                            <iframe frameBorder="0" allowFullScreen="" width="100%" height="100%"
+                            <iframe title={slide.title} frameBorder="0" allowFullScreen="" width="100%" height="100%"
                                 src={`https://www.youtube.com/embed/${slide.video}`}>
                             </iframe>
                         </SwiperSlide>;

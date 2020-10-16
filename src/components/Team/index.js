@@ -80,7 +80,7 @@ const Team = () => {
                 footer={false}
                 onOk={handleOk}
                 onCancel={handleOk}
-                closeIcon={<img src={crossImg} />}
+                closeIcon={<img alt={activePerson.name} src={crossImg} />}
             >
                 <div className="team__modal">
                     <div className="team__modal-head">

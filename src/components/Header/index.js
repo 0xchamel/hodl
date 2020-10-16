@@ -1,16 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { Drawer } from 'antd';
+import { Link } from 'react-router-dom';
 
 import './Header.scss';
 
 import logoImg from '../../assets/img/logo.svg';
 import humburger from '../../assets/img/humburger.svg';
+import drawerBackground from '../../assets/img/drawer.svg';
+
+import { ERefs } from '../../pages/Home/refs.enum';
 
 const Header = () => {
 	const [isHeaderActive, setHeaderActive] = React.useState(false);
 	const [isMenuOpen, setMenuState] = React.useState(false);
+	const [activeMenu, setCurrentMenu] = React.useState(ERefs.Home);
 
 	React.useEffect(() => {
 		window.addEventListener('scroll', () => {
@@ -26,6 +30,11 @@ const Header = () => {
 		setMenuState(!isMenuOpen);
 	};
 
+	const goTo = (menu) => {
+		toggleMenu();
+		setCurrentMenu(menu);
+	};
+
 	return (
 		<>
 			<header
@@ -39,41 +48,72 @@ const Header = () => {
 						<img src={humburger} alt="" />
 					</button>
 					<div className="header__links">
-						<Link to="/" className="header__link">
+						<a href="#portfolio" className="header__link">
 							Portfolio
-						</Link>
-						<Link to="/" className="header__link">
+						</a>
+						<a href="#media" className="header__link">
 							Media
-						</Link>
-						<Link to="/" className="header__link">
+						</a>
+						<a href="#team" className="header__link">
 							Team
-						</Link>
+						</a>
 					</div>
 				</div>
 			</header>
+
 			<Drawer
-				drawerStyle={{ background: 'linear-gradient(180deg, rgba(73, 100, 125, 0.85) 0%, rgba(73, 100, 125, 0) 100%)' }}
+				drawerStyle={{ background: `url(${drawerBackground})` }}
 				width={'100vw'}
 				closable={true}
 				onClose={() => toggleMenu()}
 				visible={isMenuOpen}
 			>
-
-                <div>
-                    <div className="drawer__links">
-						<Link to="/" className="drawer__link">
+				<div className="drawer__container">
+					<div className="drawer__links">
+						<Link
+							onClick={() => toggleMenu()}
+							to="/"
+							className={classNames('drawer__link', {
+								active: activeMenu === ERefs.Home,
+							})}
+						>
+							Main
+						</Link>
+						<a
+							href="/#portfolio"
+							onClick={() => goTo(ERefs.Profile)}
+							className={classNames('drawer__link', {
+								active: activeMenu === ERefs.Profile,
+							})}
+						>
 							Portfolio
-						</Link>
-						<Link to="/" className="drawer__link">
+						</a>
+						<a
+							href="/#media"
+							onClick={() => goTo(ERefs.Media)}
+							className={classNames('drawer__link', {
+								active: activeMenu === ERefs.Media,
+							})}
+						>
 							Media
-						</Link>
-						<Link to="/" className="drawer__link">
+						</a>
+						<a
+							href="/#team"
+							onClick={() => goTo(ERefs.Team)}
+							className={classNames('drawer__link', {
+								active: activeMenu === ERefs.Team,
+							})}
+						>
 							Team
-						</Link>
+						</a>
 					</div>
-                    <img src={logoImg}></img>
-                </div>
-            </Drawer>
+
+					<div className="drawer__footer">
+						<img alt="Logo" className="drawer__logo" src={logoImg}></img>
+						<div className="drawer__copyright">© 2020 · All rights reserved</div>
+					</div>
+				</div>
+			</Drawer>
 		</>
 	);
 };
