@@ -69,7 +69,7 @@ const Team = () => {
 										</div>
 										<div className="team__card-name">{person.name}</div>
 										<div className="team__card-position">{person.position}</div>
-										<a href={person.linkedIn} className="team__card-link">
+										<a onClick={(event) => { event.stopPropagation();  }} href={person.linkedIn} className="team__card-link">
 											<img src={inImg} alt="" />
 											<span>LinkedIn Profile</span>
 										</a>

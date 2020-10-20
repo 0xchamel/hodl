@@ -17,23 +17,25 @@ const Header = () => {
 	const [activeMenu, setCurrentMenu] = React.useState(ERefs.Home);
 
 	const initObserver = (el, type) => {
-		const intersectionObserverOptions = {
-			root: null, 
-			threshold: 0.5,
-		};
+		try {
+			const intersectionObserverOptions = {
+				root: null,
+				threshold: 0.5,
+			};
 
-		const observer = new IntersectionObserver(onIntersection, intersectionObserverOptions);
+			const observer = new IntersectionObserver(onIntersection, intersectionObserverOptions);
 
-		function onIntersection(entries, opts) {
-			entries.forEach((entry) => {
-				const visible = entry.intersectionRatio >= opts.thresholds[0];
-				if (visible) {
-					setCurrentMenu(type);
-				}
-			});
-		}
+			function onIntersection(entries, opts) {
+				entries.forEach((entry) => {
+					const visible = entry.intersectionRatio >= opts.thresholds[0];
+					if (visible) {
+						setCurrentMenu(type);
+					}
+				});
+			}
 
-		observer.observe(el);
+			observer.observe(el);
+		} catch {}
 	};
 
 	React.useEffect(() => {

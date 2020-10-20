@@ -28,11 +28,11 @@ const HomePage = () => {
 		},
 		{
 			text: 'Collective Cash Flow',
-			link: 'collective',
+			link: '#',
 		},
 		{
 			text: 'Legacy Fund',
-			link: 'legacy',
+			link: '#',
 		},
 		{
 			text: 'Crypto Assets',
@@ -50,11 +50,11 @@ const HomePage = () => {
 			case ERefs.Home:
 				return scrollToRef(mainRef);
 			case ERefs.Profile:
-				return scrollToRef(mediaRef);
+				return scrollToRef(portfolioRef);
 			case ERefs.Media:
 				return scrollToRef(mediaRef);
 			case ERefs.Team:
-				return scrollToRef(mediaRef);
+				return scrollToRef(teamRef);
 			default:
 				return;
 		}
