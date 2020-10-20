@@ -63,6 +63,7 @@
   .media {
     &__btn {
       position: static;
+      padding: 10px;
       p {
         display: none;
       }
@@ -82,6 +83,11 @@
       &--desktop {
         display: none;
       }
+    }
+
+    &__box {
+      height: 250px;
+
     }
   }
 }

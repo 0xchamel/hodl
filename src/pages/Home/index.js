@@ -125,18 +125,18 @@ const HomePage = () => {
 			</section>
 			<section id={'media'} className="home__media" ref={mediaRef}>
 				<div className="h2 home__media-title h2--decor">Media</div>
-				<div className="home__media-video">
+				{/* <div className="home__media-video">
 					<iframe
 						title="Media video"
 						frameBorder="0"
 						allowFullScreen=""
 						width="100%"
 						height="100%"
-						src="https://www.youtube.com/embed/sBR8GTUxznM"
+						src="https://www.youtube.com/embed/K8NDKD3gqRM"
 					></iframe>
-				</div>
+				</div> */}
+				<MediaSlider />
 			</section>
-			<MediaSlider />
 			<div id={'team'} ref={teamRef}>
 				<Team />
 			</div>

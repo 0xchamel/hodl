@@ -16,8 +16,33 @@ const Header = () => {
 	const [isMenuOpen, setMenuState] = React.useState(false);
 	const [activeMenu, setCurrentMenu] = React.useState(ERefs.Home);
 
+	const isInViewport = (el) => {
+		const rect = el.getBoundingClientRect();
+		return (
+			rect.top >= 0 &&
+			rect.left >= 0 &&
+			rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+			rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+		);
+	};
+
+	const checkAndSetActiveMenu = () => {
+		const media = document.getElementById(ERefs.Media);
+		const profile = document.getElementById(ERefs.Profile);
+		const team = document.getElementById(ERefs.Team);
+
+		if (isInViewport(media)) {
+			setCurrentMenu(ERefs.Media);
+		} else if (isInViewport(profile)) {
+			setCurrentMenu(ERefs.Profile);
+		} else if (isInViewport(team)) {
+			setCurrentMenu(ERefs.Team);
+		}
+	};
+
 	React.useEffect(() => {
-		window.addEventListener('scroll', () => {
+		window.addEventListener('scroll', (event) => {
+			checkAndSetActiveMenu();
 			if (window.scrollY > 50) {
 				setHeaderActive(true);
 			} else {
@@ -48,13 +73,13 @@ const Header = () => {
 						<img src={humburger} alt="" />
 					</button>
 					<div className="header__links">
-						<a href="#portfolio" className="header__link">
+						<a href="/#portfolio" className="header__link">
 							Portfolio
 						</a>
-						<a href="#media" className="header__link">
+						<a href="/#media" className="header__link">
 							Media
 						</a>
-						<a href="#team" className="header__link">
+						<a href="/#team" className="header__link">
 							Team
 						</a>
 					</div>

@@ -34,9 +34,9 @@ const Footer = () => {
         <footer className="footer">
             <div className="row footer__row">
                 <div className="footer__box footer__box-top">
-                    <span>© 2020 · All rights reserved</span>
-                    <img src={logoImg} alt="" />
-                    <a href={pdf} target="blank">Privacy Policy</a>
+                    <span className="desktop">© 2020 · All rights reserved</span>
+                    <img className="footer__box-logo" src={logoImg} alt="" />
+                    <a className="desktop" href={pdf} target="blank">Privacy Policy</a>
                 </div>
                 
                 <div className="footer__box footer__box-bottom">
@@ -47,6 +47,11 @@ const Footer = () => {
                             </a>
                         })
                     }
+                </div>
+
+                <div className="footer__box footer__box-mobile">
+                    <a className="mobile" href={pdf} target="blank">Privacy Policy</a>
+                    <span className="mobile">© 2020 · All rights reserved</span>
                 </div>
             </div>
         </footer>

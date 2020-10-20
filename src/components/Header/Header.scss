@@ -2,7 +2,7 @@
 
 .header {
   position: fixed;
-  top: 48px;
+  padding-top: 48px;
   width: 100%;
   z-index: 10;
   left: 0;
@@ -61,6 +61,11 @@
       font-weight: bold;
       padding-left: 20px;
     }
+    &:target{
+      color: $yellow;
+      font-weight: bold;
+      padding-left: 20px;
+    }
   }
 
   &__footer {
@@ -84,7 +89,7 @@
 
 @media only screen and (max-width: 600px) {
   .header {
-    top: 10px;
+    padding-top: 10px;
     left: 0px;
     max-width: 100%;
     .logo {

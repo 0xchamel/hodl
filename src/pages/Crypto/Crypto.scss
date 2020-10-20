@@ -15,7 +15,7 @@
             width: 580px;
             margin: 47px 0;
 
-            span {
+            a {
                 color: $yellow;
             }                
 
@@ -74,25 +74,9 @@
     }
 }
 
-.mobile {
-    display: none;
-}
-
-.desktop {
-    display: block;
-}
-
 
 @media only screen and (max-width: 600px) {
-    
-    .mobile {
-        display: block;
-    }
-    
-    .desktop {
-        display: none;
-    }
-
+   
     .crypto {
         padding: 0;
         &__banner {

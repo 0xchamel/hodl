@@ -5,6 +5,7 @@
     background: url(../../assets/img/main-home.jpg);
     background-size: cover;
     padding-top: 15vw;
+    position: relative;
     .h1 {
       max-width: 860px;
       color: #ffffff;
@@ -16,6 +17,7 @@
     padding: 11vw 0 0;
     height: 100vh;
     text-align: center;
+    position: relative;
     p {
       max-width: 1000px;
       margin: 0 auto 75px;
@@ -29,7 +31,7 @@
 
     &--arrow {
       transform: rotate(90deg);
-      margin-top: 300px;
+      margin-top: 10vh;
       cursor: pointer;
     }
   }
