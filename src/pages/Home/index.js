@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
+import YouTube from 'react-youtube-embed'
+
 
 import { Team, MediaSlider } from '../../components';
 
@@ -125,16 +127,19 @@ const HomePage = () => {
 			</section>
 			<section id={'media'} className="home__media" ref={mediaRef}>
 				<div className="h2 home__media-title h2--decor">Media</div>
-				{/* <div className="home__media-video">
-					<iframe
+				<div className="home__media-video">
+					
+					<YouTube id={'K8NDKD3gqRM'} />
+					
+					{/* <iframe
 						title="Media video"
 						frameBorder="0"
 						allowFullScreen=""
 						width="100%"
 						height="100%"
 						src="https://www.youtube.com/embed/K8NDKD3gqRM"
-					></iframe>
-				</div> */}
+					></iframe> */}
+				</div>
 				<MediaSlider />
 			</section>
 			<div id={'team'} ref={teamRef}>

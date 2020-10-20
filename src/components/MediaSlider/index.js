@@ -1,7 +1,7 @@
 import React from 'react';
 import SwiperCore, { EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import YouTube from 'react-youtube-embed'
+import YouTube from 'react-youtube-embed';
 
 import './MediaSlider.scss';
 import 'swiper/swiper.scss';
@@ -13,10 +13,6 @@ SwiperCore.use([EffectFade]);
 
 const MediaSlider = () => {
 	const videos = [
-		{
-			video: 'K8NDKD3gqRM',
-			title: 'HODLC Deep Dive : a crypto-asset that prevents pump and dump manipulations',
-		},
 		{
 			video: 'iB3KC8U0eS4',
 			title: 'Venture Capital Insights in Europe, Asia, Middle East and Africa: Fintech and Blockchain',
@@ -71,7 +67,7 @@ const MediaSlider = () => {
 					{videos.map((slide, index) => {
 						return (
 							<SwiperSlide key={slide.video} virtualIndex={index}>
-                                <YouTube id={slide.video} />
+								<YouTube id={slide.video} />
 								{/* <iframe
 									title={slide.title}
 									frameBorder="0"

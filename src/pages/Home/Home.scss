@@ -104,6 +104,7 @@
   &__media {
     &-video {
       margin-top: 50px;
+      margin-bottom: 150px;
       height: calc(100vh - 58px);
     }
   }
@@ -138,6 +139,14 @@
         
         display: none;
 
+      }
+    }
+    &__media {
+      margin-bottom: 0;
+  
+      &-video {
+        margin-top: 45px;
+        height: 0px;
       }
     }
   }

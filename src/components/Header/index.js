@@ -16,39 +16,42 @@ const Header = () => {
 	const [isMenuOpen, setMenuState] = React.useState(false);
 	const [activeMenu, setCurrentMenu] = React.useState(ERefs.Home);
 
-	const isInViewport = (el) => {
-		const rect = el.getBoundingClientRect();
-		return (
-			rect.top >= 0 &&
-			rect.left >= 0 &&
-			rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-			rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-		);
-	};
+	const initObserver = (el, type) => {
+		const intersectionObserverOptions = {
+			root: null, 
+			threshold: 0.5,
+		};
 
-	const checkAndSetActiveMenu = () => {
-		const media = document.getElementById(ERefs.Media);
-		const profile = document.getElementById(ERefs.Profile);
-		const team = document.getElementById(ERefs.Team);
+		const observer = new IntersectionObserver(onIntersection, intersectionObserverOptions);
 
-		if (isInViewport(media)) {
-			setCurrentMenu(ERefs.Media);
-		} else if (isInViewport(profile)) {
-			setCurrentMenu(ERefs.Profile);
-		} else if (isInViewport(team)) {
-			setCurrentMenu(ERefs.Team);
+		function onIntersection(entries, opts) {
+			entries.forEach((entry) => {
+				const visible = entry.intersectionRatio >= opts.thresholds[0];
+				if (visible) {
+					setCurrentMenu(type);
+				}
+			});
 		}
+
+		observer.observe(el);
 	};
 
 	React.useEffect(() => {
-		window.addEventListener('scroll', (event) => {
-			checkAndSetActiveMenu();
+		window.addEventListener('scroll', () => {
 			if (window.scrollY > 50) {
 				setHeaderActive(true);
 			} else {
 				setHeaderActive(false);
 			}
 		});
+
+		const media = document.getElementById(ERefs.Media);
+		const profile = document.getElementById(ERefs.Profile);
+		const team = document.getElementById(ERefs.Team);
+
+		initObserver(media, ERefs.Media);
+		initObserver(profile, ERefs.Profile);
+		initObserver(team, ERefs.Team);
 	});
 
 	const toggleMenu = () => {

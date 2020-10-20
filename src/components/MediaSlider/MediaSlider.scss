@@ -60,7 +60,13 @@
 
 
 @media only screen and (max-width: 600px) {
+  #media {
+    padding: 0;
+  }
   .media {
+    padding: 0;
+    padding-top: 100px;
+    
     &__btn {
       position: static;
       padding: 10px;
@@ -86,8 +92,9 @@
     }
 
     &__box {
-      height: 250px;
-
+      display: flex;
+      flex-direction: column-reverse;
+      height: 21rem;
     }
   }
 }
