@@ -5,13 +5,17 @@
   background: url('../../assets/img/team/bg.jpg');
   background-size: cover;
   &__row {
-    max-width: 1220px !important;
   }
   &__box {
     margin-top: 200px;
     display: grid;
     grid-template-columns: repeat(4, 240px);
     justify-content: space-between;
+    overflow: auto;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    grid-column-gap: 1.5%;
   }
   &__card {
     &-wrapper {
@@ -98,6 +102,7 @@
       color: #ffffff;
       text-align: left;
       margin: 25px 0;
+      white-space: pre-line;
     }
   }
 }

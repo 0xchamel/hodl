@@ -76,20 +76,22 @@ const HomePage = () => {
 			</div>
 
 			<div className="home__inf" ref={mainRef}>
-				<p>
-					<span>Dragon’s Vault</span> is&nbsp;a&nbsp;globally distributed investment portfolio composed
-					of&nbsp;crypto-assets and venture capital. Our family of&nbsp;funds are optimized for<br></br>{' '}
-					high-risks/high-returns and shielded against localized financial crisis and currency devaluation
-					of&nbsp;specific regions of&nbsp;the world.
-				</p>
-				<img src={decor_1} alt="" />
-				<div>
-					<img
-						onClick={() => executeScroll(ERefs.Profile)}
-						className="home__inf--arrow"
-						src={arrowBottom}
-						alt=""
-					/>
+				<div className="row">
+					<p>
+						<span>Dragon’s Vault</span> is&nbsp;a&nbsp;globally distributed investment portfolio composed
+						of&nbsp;crypto-assets and venture capital. Our family of&nbsp;funds are optimized for<br></br>{' '}
+						high-risks/high-returns and shielded against localized financial crisis and currency devaluation
+						of&nbsp;specific regions of&nbsp;the world.
+					</p>
+					<img src={decor_1} alt="" />
+					<div>
+						<img
+							onClick={() => executeScroll(ERefs.Profile)}
+							className="home__inf--arrow"
+							src={arrowBottom}
+							alt=""
+						/>
+					</div>
 				</div>
 			</div>
 
@@ -126,21 +128,25 @@ const HomePage = () => {
 				</div>
 			</section>
 			<section id={'media'} className="home__media" ref={mediaRef}>
-				<div className="h2 home__media-title h2--decor">Media</div>
-				<div className="home__media-video">
-					
-					<YouTube id={'K8NDKD3gqRM'} />
-					
-					{/* <iframe
-						title="Media video"
-						frameBorder="0"
-						allowFullScreen=""
-						width="100%"
-						height="100%"
-						src="https://www.youtube.com/embed/K8NDKD3gqRM"
-					></iframe> */}
+				<div className="row">
+					<div className="h2 home__media-title h2--decor">Media</div>
+					<div className="home__media-video">
+
+						<YouTube id={'K8NDKD3gqRM'} />
+
+						{/* <iframe
+							title="Media video"
+							frameBorder="0"
+							allowFullScreen=""
+							width="100%"
+							height="100%"
+							src="https://www.youtube.com/embed/K8NDKD3gqRM"
+						></iframe> */}
+					</div>
 				</div>
-				<MediaSlider />
+				<div className="row">
+					<MediaSlider />
+				</div>
 			</section>
 			<div id={'team'} ref={teamRef}>
 				<Team />

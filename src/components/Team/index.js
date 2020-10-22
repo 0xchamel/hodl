@@ -14,21 +14,29 @@ const Team = () => {
 			position: 'Managing General Partner',
 			linkedIn: 'https://www.linkedin.com/in/patpoirier/',
 			text:
-				'Legal Counsel, COO of Asia & General Partner, is an international lawyer specializing in business law, investment law, international law, and dispute resolution. Having worked with start-ups for over 10 years, Sahil has gained tremendous experience in fintech and blockchain. He is a fully qualified commonwealth lawyer; an Associate of the Chartered Institute of Arbitrators (London, UK); a registered legal practitioner with the DIFC Courts (Dubai, UAE); and an arbitrator with CRCICA (Egypt).',
+				`Managing General Partner of Dragon’s Vault, from a high-school dropout, he later pursued his education and completed 5 degrees in various disciplines such as commerce, computer science, neuroscience, artificial intelligence. During which, he founded 6 businesses in the technology sectors, including Artificial Intelligence and Blockchain.
+				
+				One of his previous companies was nominated in the top 10 competitors in the IBM Watson AI XPRIZE in 2017, and again the top 30 in 2018. He’s been a participant of multiple business accelerators such as the prestigious Creative Destruction Lab in the Blockchain and Artificial Intelligence stream. Additionally, Patrick is an Angel investor with the Singapore-based Angel Central group.
+				
+				He studied for a while Computational Finance and worked at a Hedge Fund that was building sentiment analysis technologies on Twitter data to predict stock market fluctuations. He also served as a technology advisor for new internet-based ventures to the top executives of Rockwell Collins, a Fortune 500 with 34,000 employees.`
 		},
 		{
 			name: 'Sahil Verma',
 			position: 'Legal Counsel, COO of Asia & General Partner',
 			linkedIn: 'https://www.linkedin.com/in/sahilv/',
 			text:
-				'Managing General Partner of Dragon’s Vault, from a high-school dropout, he later pursued his education and completed 5 degrees in various disciplines such as commerce, computer science, neuroscience, artificial intelligence. During which, he founded 6 businesses in the technology sectors, including Artificial Intelligence and Blockchain. One of his previous companies was nominated in the top 10 competitors in the IBM Watson AI XPRIZE in 2017, and again the top 30 in 2018. He’s been a participant of multiple business accelerators such as the prestigious Creative Destruction Lab in the Blockchain and Artificial Intelligence stream. Additionally, Patrick is an Angel investor with the Singapore-based Angel Central group. He studied for a while Computational Finance and worked at a Hedge Fund that was building sentiment analysis technologies on Twitter data to predict stock market fluctuations. He also served as a technology advisor for new internet-based ventures to the top executives of Rockwell Collins, a Fortune 500 with 34,000 employees.',
+				`Legal Counsel, COO of Asia & General Partner, is an international lawyer specializing in business law, investment law, international law, and dispute resolution. 
+				
+				Having worked with start-ups for over 10 years, Sahil has gained tremendous experience in fintech and blockchain. He is a fully qualified commonwealth lawyer; an Associate of the Chartered Institute of Arbitrators (London, UK); a registered legal practitioner with the DIFC Courts (Dubai, UAE); and an arbitrator with CRCICA (Egypt).`,
 		},
 		{
 			name: 'Mike Sites',
 			position: 'COO of Americas & General Partner',
 			linkedIn: 'https://www.linkedin.com/in/michaelsites1/',
 			text:
-				'COO of Americas & General Partner, has nearly 20 years of experience in startups to fortune 500 companies at the C level. Is a 4x founder in multiple industries; including helping acquire the leading IP in document automation processes in 2009, to then transform it into a Gartner’s ‘Best of Breed’ technology, followed by a successful exit in 2017',
+				`COO of Americas & General Partner, has nearly 20 years of experience in startups to fortune 500 companies at the C level.
+				
+				Is a 4x founder in multiple industries; including helping acquire the leading IP in document automation processes in 2009, to then transform it into a Gartner’s ‘Best of Breed’ technology, followed by a successful exit in 2017. `,
 		},
 		{
 			name: 'Christina Nguyen',
@@ -69,7 +77,8 @@ const Team = () => {
 										</div>
 										<div className="team__card-name">{person.name}</div>
 										<div className="team__card-position">{person.position}</div>
-										<a onClick={(event) => { event.stopPropagation();  }} href={person.linkedIn} className="team__card-link">
+										<a onClick={(event) => { event.stopPropagation();  }} href={person.linkedIn}
+										   className="team__card-link" target="_blank">
 											<img src={inImg} alt="" />
 											<span>LinkedIn Profile</span>
 										</a>

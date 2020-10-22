@@ -16,7 +16,8 @@ body {
 
 .row {
   margin: 0 auto;
-  max-width: 1240px;
+  max-width: 1350px;
+  width: 94%;
 }
 
 .h1 {
@@ -34,7 +35,7 @@ body {
   color: $black;
   justify-content: center;
   text-align: center;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   &--decor {
     &::before {
       content: '';
@@ -90,7 +91,7 @@ a {
   }
 }
 section {
-  padding: 100px 0;
+  padding: 5vw 0;
   & + & {
     padding-top: 0;
   }

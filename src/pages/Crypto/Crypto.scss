@@ -34,8 +34,11 @@
 
         &--content {
             color: #405569;
-            width: 500px;
+            width: 45%;
             margin-top: 250px;
+        }
+        &--image {
+            max-width: 52%;
         }
 
         &--row {
@@ -75,6 +78,19 @@
 }
 
 
+@media screen and (max-width: 1080px) {
+
+    .crypto {
+        &__info {
+            &--content {
+                width: 50%;
+            }
+            &--image {
+                max-width: 45%;
+            }
+        }
+    }
+}
 @media only screen and (max-width: 600px) {
    
     .crypto {
@@ -113,7 +129,9 @@
                     margin-top: 52px;
                 }
             }
-
+            &--image {
+                max-width: initial;
+            }
             &--row {
                 flex-direction: column;
                 

@@ -73,7 +73,9 @@ const Header = () => {
 				})}
 			>
 				<div className="row header__row">
-					<img src={logoImg} alt="" className="logo" />
+					<a href="/">
+						<img src={logoImg} alt="" className="logo" />
+					</a>
 					<button className="header__hamburger" onClick={() => toggleMenu()}>
 						<img src={humburger} alt="" />
 					</button>
