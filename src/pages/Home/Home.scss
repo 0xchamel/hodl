@@ -1,10 +1,10 @@
 @import '../../styles/var';
 .home {
   &__main {
-    height: 100vh;
+    min-height: 100vh;
     background: url(../../assets/img/main-home.jpg);
     background-size: cover;
-    padding-top: 15vw;
+    padding: 15vw 0 25px;
     position: relative;
     .h1 {
       max-width: 860px;
@@ -14,8 +14,8 @@
   &__inf {
     background: url(../../assets/img/inf-home.jpg);
     background-size: cover;
-    padding: 11vw 0 0;
-    height: 100vh;
+    padding: 11vw 0 25px;
+    min-height: 100vh;
     text-align: center;
     position: relative;
     p {

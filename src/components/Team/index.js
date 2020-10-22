@@ -101,7 +101,7 @@ const Team = () => {
 						<img src={require(`../../assets/img/team/${activePerson.img}.jpg`)} alt="" />
 						<div className="team__modal-wrapper">
 							<div className="team__modal-name">{activePerson.name}</div>
-							<a href={activePerson.linkedIn} className="team__card-link">
+							<a href={activePerson.linkedIn} className="team__card-link" target="_blank">
 								<img src={inImg} alt="" />
 								<span>LinkedIn Profile</span>
 							</a>
