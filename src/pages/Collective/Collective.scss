@@ -27,6 +27,9 @@
 @media screen and (max-width: 1080px) {}
 @media only screen and (max-width: 600px) {
   .crypto {
+    &.collective &__info {
+      padding-top: 80px;
+    }
     &.collective &__info--row {
       &:first-child {
         flex-direction: column;
