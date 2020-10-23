@@ -28,7 +28,7 @@ const HomePage = () => {
 		},
 		{
 			text: 'Collective Cash Flow',
-			link: '#',
+			link: 'collective',
 		},
 		{
 			text: 'Legacy Fund',

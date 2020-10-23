@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, useLocation, withRouter } from 'react-router-dom';
 
-import { HomePage, HumanPage, CryptoPage } from './pages';
+import { HomePage, HumanPage, CryptoPage, CollectivePage } from './pages';
 import { Header, Footer } from './components';
 
 import './styles/main.scss';
@@ -31,6 +31,9 @@ function App() {
 						</Route>
 						<Route path="/crypto">
 							<CryptoPage />
+						</Route>
+						<Route path="/collective">
+							<CollectivePage />
 						</Route>
 						<Route path="/">
 							<HomePage />
