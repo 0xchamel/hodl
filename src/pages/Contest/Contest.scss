@@ -1,0 +1,244 @@
+@import "../../styles/var";
+
+.contest {
+  &__banner {
+    height: 100vh;
+    background: url(../../assets/img/main-home.jpg);
+    background-size: cover;
+    padding-top: 15vw;
+
+    &--description {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 25px;
+      line-height: 32px;
+      width: 580px;
+      margin: 3rem 0;
+    }
+
+    &--name {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 25px;
+      line-height: 32px;
+      width: 580px;
+      margin: 3rem 0 2rem 0;
+    }
+  }
+
+  &__summary {
+    background: url(../../assets/img/inf-home.jpg);
+    background-size: cover;
+    padding: 11vw 0 25px;
+    min-height: 100vh;
+    text-align: center;
+    position: relative;
+    p {
+      max-width: 1000px;
+      margin: 0 auto 75px;
+      font-family: PR;
+      font-size: 40px;
+      line-height: 53px;
+      span {
+        color: $yellow;
+      }
+
+      strong {
+        font-weight: bold;
+        font-size: 44px;
+      }
+    }
+
+    &--arrow {
+      transform: rotate(90deg);
+      margin-top: 10vh;
+      cursor: pointer;
+    }
+  }
+
+  .h1 {
+    max-width: 860px;
+    color: #ffffff;
+  }
+
+  &__info {
+    max-width: 1240px;
+    margin: 0px auto;
+    margin-bottom: 100px;
+
+    &--content {
+      color: #405569;
+      margin-top: 5rem;
+    }
+
+    &--row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--title {
+      font-size: 40px;
+      line-height: 53px;
+      margin-bottom: 35px;
+      font-weight: bold;
+      color: #2b3035;
+    }
+
+    &--subtitle {
+      color: $yellow;
+      font-size: 15px;
+      line-height: 20px;
+    }
+
+    &--subtext {
+      font-size: 18px;
+      line-height: 32px;
+      margin-left: 2rem;
+
+      strong {
+        font-weight: bold;
+      }
+    }
+
+    &--text {
+      font-size: 18px;
+      line-height: 32px;
+
+      a {
+        color: $yellow;
+
+        &:hover {
+          color: rgba($yellow, 0.5);
+        }
+      }
+
+      .float {
+        &__left {
+          float: left;
+          margin: 0.5rem 1rem 0 0;
+        }
+        &__right {
+          float: right;
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.text {
+  &__left {
+    text-align: left;
+  }
+
+  &__right {
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .contest {
+    &__info {
+      &--content {
+        width: 100%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .contest {
+    padding: 0;
+    &__banner {
+      background-position: center;
+
+      &--description {
+        font-size: 25px;
+        line-height: 32px;
+        width: 325px;
+        margin: 1rem 0;
+      }
+
+      &--name {
+        width: 325px;
+        margin: 1.5rem 0 1rem 0;
+      }
+    }
+
+    &__summary {
+      p {
+        margin: 50px auto 100px;
+        font-size: 25px;
+        line-height: 33px;
+
+        strong {
+          font-weight: bold;
+          font-size: 27px;
+        }
+      }
+      &--arrow {
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        margin-top: -100px;
+        margin-left: -20px;
+      }
+    }
+
+    .row,
+    .h1 {
+      padding: 0 20px;
+    }
+
+    .title-top {
+      padding: 0;
+    }
+
+    .row {
+      margin-top: 50px;
+      font-weight: normal;
+      font-size: 25px;
+      line-height: 32px;
+    }
+
+    .h1 {
+      font-size: 50px;
+      line-height: 50px;
+    }
+
+    &__info {
+      &--content {
+        width: 100%;
+        margin-top: 0px;
+        &:first-child {
+          margin-top: 2rem;
+        }
+      }
+      &--row {
+        flex-direction: column-reverse;
+      }
+
+      &--title {
+        margin-bottom: 0px;
+        font-size: 30px;
+      }
+
+      &--subtitle {
+        margin-top: 28px;
+      }
+
+      &--subtext {
+      }
+
+      &--text {
+        .float {
+          &__left,
+          &__right {
+            width: 100%;
+            height: auto;
+            margin: 1rem 0;
+          }
+        }
+      }
+    }
+  }
+}

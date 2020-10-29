@@ -1,13 +1,14 @@
-@import './fonts';
-@import '~antd/dist/antd.css';
-@import './reset';
-@import './var';
+@import "./fonts";
+@import "~antd/dist/antd.css";
+@import "./reset";
+@import "./var";
 
 body {
   margin: 0;
   padding: 0;
   font-family: PR;
   color: white;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -38,30 +39,30 @@ body {
   margin: 0 auto 20px;
   &--decor {
     &::before {
-      content: '';
+      content: "";
       width: 112px;
       height: 10px;
       display: block;
-      background: url('../assets/img/decor/2.svg');
+      background: url("../assets/img/decor/2.svg");
       margin-right: 50px;
       margin-top: 5px;
     }
     &::after {
-      content: '';
+      content: "";
       width: 112px;
       height: 10px;
       display: block;
-      background: url('../assets/img/decor/3.svg');
+      background: url("../assets/img/decor/3.svg");
       margin-left: 50px;
       margin-top: 5px;
     }
     &-light {
       color: white;
       &::before {
-        background: url('../assets/img/decor/4.svg');
+        background: url("../assets/img/decor/4.svg");
       }
       &::after {
-        background: url('../assets/img/decor/5.svg');
+        background: url("../assets/img/decor/5.svg");
       }
     }
   }
@@ -105,30 +106,35 @@ section {
   display: block;
 }
 
-@media only screen and (max-width: 600px) {
+button {
+  color: $black;
+  padding: 0.5rem 1rem;
+  width: 200px;
+  margin: auto;
+}
 
+@media only screen and (max-width: 600px) {
   .mobile {
     display: block;
   }
 
   .desktop {
-      display: none;
+    display: none;
   }
 
- .h2 {
-   &--decor {
-    font-size: 30px;
-    line-height: 40px;
-    &::before {
-      margin-right: 10px;
-      margin-top: 5px;
+  .h2 {
+    &--decor {
+      font-size: 30px;
+      line-height: 40px;
+      &::before {
+        margin-right: 10px;
+        margin-top: 5px;
+      }
+      &::after {
+        content: "";
+        margin-left: 10px;
+        margin-top: 5px;
+      }
     }
-    &::after {
-      content: '';
-      margin-left: 10px;
-      margin-top: 5px;
-    }
-   }
-
- }
+  }
 }

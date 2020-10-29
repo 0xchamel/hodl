@@ -1,0 +1,96 @@
+@import "../../styles/var";
+
+.auth {
+  height: 100vh;
+  background: url(../../assets/img/main-home.jpg);
+  background-size: cover;
+  padding-top: 15vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 450px;
+    margin: auto;
+    animation: fadeIn 1s ease-out;
+
+    input {
+      width: 100%;
+      margin: 1rem 0;
+      font-size: 18px;
+      border: none;
+      border-bottom: 1px solid white;
+      background: transparent;
+      outline: none;
+      color: white;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+
+  &__register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 450px;
+    margin: auto;
+    animation: fadeIn 1s ease-out;
+
+    input {
+      width: 100%;
+      margin: 1rem 0;
+      font-size: 18px;
+      border: none;
+      border-bottom: 1px solid white;
+      background: transparent;
+      outline: none;
+      color: white;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+
+  &__notification {
+    text-align: center !important;
+    animation: fadeIn 1.5s ease-out;
+  }
+
+  p {
+    text-shadow: 0 0 2px black;
+    width: 100%;
+    text-align: right;
+    cursor: pointer;
+  }
+
+  button {
+    margin-top: 2rem;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .auth {
+    &__login,
+    &__register {
+      min-width: 250px;
+    }
+  }
+}
