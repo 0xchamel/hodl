@@ -17,7 +17,7 @@ export default class UserApi {
     });
   }
 
-  static register(firstName, lastName, email, password) {
+  static register(firstName, lastName, email, password, ip) {
     return fetch(`${API_BASE_URL}/users`, {
       method: "POST",
       headers,
@@ -26,6 +26,8 @@ export default class UserApi {
         lastName,
         email,
         password,
+        tos_date: new Date().getTime(),
+        tos_ip: ip
       }),
     });
   }

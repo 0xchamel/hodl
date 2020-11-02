@@ -79,9 +79,9 @@ export const login = (email, password) => (dispatch) =>
       });
   });
 
-export const register = (firstName, lastName, email, password) => () =>
+export const register = (firstName, lastName, email, password, ip) => () =>
   new Promise((resolve, reject) => {
-    UserApi.register(firstName, lastName, email, password)
+    UserApi.register(firstName, lastName, email, password, ip)
       .then((res) => {
         if (res.status === 500) {
           reject(new Error("Server is not available!"));

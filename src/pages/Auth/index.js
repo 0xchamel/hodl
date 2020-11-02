@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
+
 import { login, register } from "../../reducers/user";
 
 import "./Auth.scss";
@@ -13,12 +15,14 @@ const AuthPage = () => {
 
   if (isLoggedIn) history.push("/profile");
 
+  const [ip, setIP] = useState("");
   const [loginInfo, setLoginInfo] = useState({
     email: "",
     password: "",
   });
   const [notification, setNotification] = useState({ text: "", success: true });
   const [isLogin, setIsLogin] = useState(true);
+  const [agreeTerms, setAgreeTerms] = useState(false);
   const [registerInfo, setRegisterInfo] = useState({
     firstName: "",
     lastName: "",
@@ -45,7 +49,8 @@ const AuthPage = () => {
         registerInfo.firstName,
         registerInfo.lastName,
         registerInfo.email,
-        registerInfo.password
+        registerInfo.password,
+        ip
       )
     ).then((res) => {
       setNotification({
@@ -63,6 +68,12 @@ const AuthPage = () => {
   useEffect(() => {
     if (!isLogin && registerInfo) setNotification({ text: "", success: false });
   }, [isLogin, registerInfo]);
+
+  useEffect(() => {
+    axios.get("https://api.ipify.org?format=json").then((res) => {
+      setIP(res.data.ip);
+    });
+  }, []);
 
   return (
     <div className="auth">
@@ -130,8 +141,26 @@ const AuthPage = () => {
               setRegisterInfo({ ...registerInfo, password: e.target.value })
             }
           />
+          <div
+            className="auth__agree-terms"
+            onClick={() => setAgreeTerms(!agreeTerms)}
+          >
+            <input
+              type="checkbox"
+              checked={agreeTerms}
+              onChange={(e) => setAgreeTerms(e.target.checked)}
+            />{" "}
+            <span>
+              I agree with{" "}
+              <a href="/terms" onClick={(e) => e.stopPropagation()}>
+                terms of the platform
+              </a>
+            </span>
+          </div>
           <p onClick={() => setIsLogin(true)}>Login</p>
-          <button type="submit">Register</button>
+          <button type="submit" disabled={!agreeTerms}>
+            Register
+          </button>
         </form>
       )}
     </div>

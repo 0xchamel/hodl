@@ -9,6 +9,25 @@
   align-items: center;
   justify-content: center;
 
+  &__agree-terms {
+    display: flex;
+    align-items: center;
+
+    input {
+      margin-right: 1rem !important;
+      width: initial !important;
+    }
+
+    span {
+      cursor: pointer;
+    }
+
+    a {
+      color: $yellow;
+      text-decoration: underline;
+    }
+  }
+
   &__login {
     display: flex;
     flex-direction: column;
@@ -29,7 +48,7 @@
       color: white;
 
       &::placeholder {
-        color: rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, 0.8);
       }
     }
   }
@@ -54,7 +73,7 @@
       color: white;
 
       &::placeholder {
-        color: rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, 0.8);
       }
     }
   }

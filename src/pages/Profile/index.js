@@ -52,7 +52,10 @@ const ProfilePage = () => {
       setValidVideo(
         profileInfo["videoUrl"] === "" ||
           profileInfo["videoUrl"].indexOf("https://www.youtube.com/embed/") ===
-            0
+            0 ||
+          profileInfo["videoUrl"].indexOf("www.youtube.com") === 0 ||
+          profileInfo["videoUrl"].indexOf("https://www.youtube.com") === 0 ||
+          profileInfo["videoUrl"].indexOf("www.youtube.com") === 0
       );
     }
   }, [profileInfo]);
