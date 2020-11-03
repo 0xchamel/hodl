@@ -1,0 +1,89 @@
+@import '../../styles/var';
+
+.legacy {
+  .crypto__banner {
+    background-image: url(../../assets/img/legacy/background.jpg);
+  }
+  .crypto__info {
+    padding-top: 5vw;
+    &--row {
+      display: block;
+    }
+    &--content {
+      margin-top: 2.5vw;
+      width: 65%;
+    }
+    &--image {
+      width: initial;
+      max-width: initial;
+      margin-top: 4vw;
+      background: linear-gradient(36.08deg, #FFDC72 -4.91%, rgba(255, 255, 255, 0) 152.53%),
+      url(../../assets/img/legacy/dragon.png) bottom right no-repeat;
+      min-height: 300px;
+      border-radius: 12px;
+      padding: 2vw 3vw;
+      &_title {
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 40px;
+        margin-bottom: 2vw;
+      }
+      &_text {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1.4em;
+        max-width: 65%;
+        padding-left: 30px;
+        position: relative;
+        &:after {
+          content: '';
+          display: block;
+          border-radius: 50%;
+          width: 8px;
+          height: 8px;
+          left: 0;
+          top: 20px;
+          margin-top: -4px;
+          position: absolute;
+          background-color: #000;
+        }
+      }
+    }
+    &--title {
+      font-style: normal;
+      font-weight: 700;
+      text-align: left;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1080px) {}
+@media only screen and (max-width: 800px) {
+  .crypto {
+    .legacy &__info {
+      padding-top: 80px;
+    }
+    .legacy &__info--title {
+      margin-bottom: 3vw;
+    }
+    .legacy &__info--content {
+      width: auto;
+    }
+    .legacy &__info--image {
+      padding: 3vw 5vw;
+      &_title {
+        font-size: 27px;
+      }
+      &_text {
+        font-size: 17px;
+        max-width: 90%;
+      }
+    }
+    &.legacy &__info--row {
+      &:first-child {
+        flex-direction: column;
+      }
+    }
+  }
+}

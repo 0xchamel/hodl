@@ -32,7 +32,7 @@ const HomePage = () => {
 		},
 		{
 			text: 'Legacy Fund',
-			link: '#',
+			link: 'legacy',
 		},
 		{
 			text: 'Crypto Assets',
