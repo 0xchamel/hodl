@@ -1,21 +1,10 @@
-@import '../../styles/var';
+@import "../../styles/var";
 
 .media {
-  &__title {
-    font-size: 25px;
-    line-height: 33px;
-    font-family: PB;
-    color: $black;
-    max-width: 580px;
-    margin: 0 auto 30px;
-    text-align: center;
-
-    &--mobile {
-      display: none;
-    }
+  &__item {
+    padding: 0 0.5rem;
   }
   &__box {
-    max-width: 850px;
     margin: 0 auto;
     position: relative;
   }
@@ -57,11 +46,10 @@
   }
 }
 
-
 @media only screen and (max-width: 1350px) {
   .media {
     padding: 0;
-    padding-top: 100px;
+    padding-top: 50px;
 
     &__btn {
       position: static;
@@ -76,18 +64,6 @@
         align-items: center;
       }
     }
-    &__title {
-      font-size: 15px;
-      font-weight: bold;
-      line-height: 20px;
-      &--mobile {
-        display: block;
-      }
-      &--desktop {
-        display: none;
-      }
-    }
-
     &__box {
       display: flex;
       flex-direction: column-reverse;
@@ -99,5 +75,4 @@
   #media {
     padding: 0;
   }
-
 }

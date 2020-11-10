@@ -2,8 +2,6 @@ import React from "react";
 
 import "./Terms.scss";
 
-import arrowBottom from "../../assets/img/arrow-next.svg";
-
 const TermsPage = () => {
   return (
     <div className="terms">

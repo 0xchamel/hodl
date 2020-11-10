@@ -113,6 +113,16 @@ button {
   margin: auto;
 }
 
+.react-multiple-carousel__arrow {
+  width: 2rem !important;
+  height: 2rem !important;
+  background: rgba($color: $yellow, $alpha: 0.6);
+
+  &:hover {
+    background: rgba($color: $yellow, $alpha: 1);
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .mobile {
     display: block;

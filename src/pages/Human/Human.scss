@@ -1,75 +1,84 @@
 .human {
-    &__banner {
-        height: 100vh;
-        background: url(../../assets/img/collective/bg.svg);
-        background-size: cover;
-        padding-top: 15vw;
+  &__banner {
+    height: 100vh;
+    background: url(../../assets/img/collective/bg.svg);
+    background-size: cover;
+    padding-top: 15vw;
 
-        &--description {
-            font-style: normal;
-            font-weight: normal;
-            font-size: 25px;
-            line-height: 32px;
-            width: 580px;
-            margin: 47px 0;
-        }
+    &--description {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 25px;
+      line-height: 32px;
+      width: 580px;
+      margin: 47px 0;
     }
+  }
 
-    .h1 {
-      max-width: 860px;
-      color: #ffffff;
-    }
+  .h1 {
+    max-width: 860px;
+    color: #ffffff;
+  }
 
-    &__video {
-        height: 658px;
-        width: 1172px;
-        margin: 100px auto;
-        margin-top: -30vh;
-        position: relative;
-    }
-
+  &__video {
+    height: 50vh;
+    width: 50vw;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+  }
 }
 
 @media only screen and (max-width: 1190px) {
-    .human {
-        &__video {
-            height: 54vw;
-            width: 100%;
-        }
+  .human {
+    &__video {
+      height: 45vh;
+      width: 80vw;
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
     }
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .human {
-        padding: 0;
-        &__banner {
-            background-position: center;
-            &--description {
-                font-size: 25px;
-                line-height: 32px;
-                width: 325px;
-            }
-        }
-
-        .row, .h1, .title-top {
-            padding: 0 20px;
-        }
-
-        .row {
-            margin-top: 50px;
-            font-weight: normal;
-            font-size: 25px;
-            line-height: 32px;
-        }
-
-        .h1 {
-            font-size: 50px;
-            line-height: 50px;
-        }
-
-        &__video {
-            margin-top: -200px;
-        }
-        
+  .human {
+    padding: 0;
+    &__banner {
+      background-position: center;
+      &--description {
+        font-size: 25px;
+        line-height: 32px;
+        width: 325px;
+      }
     }
+
+    .row,
+    .h1,
+    .title-top {
+      padding: 0 20px;
+    }
+
+    .row {
+      margin-top: 50px;
+      font-weight: normal;
+      font-size: 25px;
+      line-height: 32px;
+    }
+
+    .h1 {
+      font-size: 50px;
+      line-height: 50px;
+    }
+
+    &__video {
+      height: 30vh;
+      width: 85vw;
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 }

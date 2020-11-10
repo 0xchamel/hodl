@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { getProfile, updateProfile } from "../../reducers/user";
 
 import "./Profile.scss";
@@ -9,9 +8,7 @@ const ProfilePage = () => {
   const dispatch = useDispatch();
   const [validVideo, setValidVideo] = useState(true);
 
-  const { accessToken, refreshToken, user: userData } = useSelector(
-    (state) => state.user
-  );
+  const { accessToken, user: userData } = useSelector((state) => state.user);
   const [profileInfo, setProfileInfo] = useState(userData);
   const [notification, setNotification] = useState("");
 

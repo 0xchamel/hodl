@@ -1,74 +1,75 @@
-import React from 'react';
-import SwiperCore, { EffectFade } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import YouTube from 'react-youtube-embed';
+import React from "react";
+import YouTube from "react-youtube-embed";
+import Carousel from "react-multi-carousel";
 
-import './MediaSlider.scss';
-import 'swiper/swiper.scss';
+import "./MediaSlider.scss";
+import "react-multi-carousel/lib/styles.css";
 
-import arrowNextImg from '../../assets/img/arrow-next.svg';
-import arrowPrevImg from '../../assets/img/arrow-prev.svg';
-
-SwiperCore.use([EffectFade]);
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+    paritialVisibilityGutter: 60,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    paritialVisibilityGutter: 50,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    paritialVisibilityGutter: 30,
+  },
+};
 
 const MediaSlider = () => {
-	const videos = [
-		{
-			video: 'iB3KC8U0eS4',
-			title: 'Venture Capital Insights in Europe, Asia, Middle East and Africa: Fintech and Blockchain',
-		},
-		{
-			video: 'H1mTLwEziX8',
-			title: 'Laws of Investments during the Pandemic: Blockchain & Decentralised Finance',
-		},
-		{
-			video: 'E6iT-qd6Z14',
-			title: 'VC Insights in Middle East: Entertainment, Gaming, and eSports',
-		},
-		{
-			video: 'bR40d0AFjs8',
-			title: 'Venture Capital Insights in Europe, Asia, Middle East and Africa: EduTech and EdTech',
-		},
-		{
-			video: 'Ag4hfhVCz1w',
-			title: 'Venture Capital Insights in Europe, Asia, Middle East and Africa: Worktech, Remotech',
-		},
-		{
-			video: 'kUDnnwQE7ko',
-			title: 'Venture Capital Insights in Europe, Asia, Middle East and Africa: Fintech and Blockchain',
-		},
-	];
+  const videos = [
+    {
+      video: "iB3KC8U0eS4",
+      title:
+        "Venture Capital Insights in Europe, Asia, Middle East and Africa: Fintech and Blockchain",
+    },
+    {
+      video: "H1mTLwEziX8",
+      title:
+        "Laws of Investments during the Pandemic: Blockchain & Decentralised Finance",
+    },
+    {
+      video: "E6iT-qd6Z14",
+      title: "VC Insights in Middle East: Entertainment, Gaming, and eSports",
+    },
+    {
+      video: "bR40d0AFjs8",
+      title:
+        "Venture Capital Insights in Europe, Asia, Middle East and Africa: EduTech and EdTech",
+    },
+    {
+      video: "Ag4hfhVCz1w",
+      title:
+        "Venture Capital Insights in Europe, Asia, Middle East and Africa: Worktech, Remotech",
+    },
+    {
+      video: "kUDnnwQE7ko",
+      title:
+        "Venture Capital Insights in Europe, Asia, Middle East and Africa: Fintech and Blockchain",
+    },
+  ];
 
-	const [swiper, setSwiper] = React.useState({});
-	const [activeTitle, setActiveTitle] = React.useState(videos[0].title);
-	const [leftTitle, setLeftTitle] = React.useState('');
-	const [rightTitle, setRightTitle] = React.useState(videos[1].title);
-
-	const handleSlideChange = (swiper) => {
-		if (swiper) {
-			setActiveTitle(videos[swiper.realIndex].title);
-			videos[swiper.realIndex - 1] ? setLeftTitle(videos[swiper.realIndex - 1].title) : setLeftTitle('');
-			videos[swiper.realIndex + 1] ? setRightTitle(videos[swiper.realIndex + 1].title) : setRightTitle('');
-		}
-	};
-
-	return (
-		<section className="media">
-			<div className="media__title media__title--desktop">{activeTitle}</div>
-
-			<div className="media__box">
-				<Swiper
-					spaceBetween={30}
-					slidesPerView={1}
-					// effect="fade"
-					onSwiper={(swiper) => setSwiper(swiper)}
-					onSlideChangeTransitionEnd={handleSlideChange}
-				>
-					{videos.map((slide, index) => {
-						return (
-							<SwiperSlide key={slide.video} virtualIndex={index}>
-								<YouTube id={slide.video} />
-								{/* <iframe
+  return (
+    <section className="media">
+      <div className="media__box">
+        <Carousel
+          ssr
+          deviceType="desktop"
+          itemClass="media__item"
+          responsive={responsive}
+        >
+          {videos.map((slide, index) => {
+            return (
+              <>
+                <YouTube id={slide.video} />
+                {/* <iframe
 									title={slide.title}
 									frameBorder="0"
 									allowFullScreen=""
@@ -76,34 +77,13 @@ const MediaSlider = () => {
 									height="100%"
 									src={`https://www.youtube.com/embed/${slide.video}`}
 								></iframe> */}
-							</SwiperSlide>
-						);
-					})}
-				</Swiper>
-				<div className="media__btn--container">
-					{!swiper.isBeginning ? (
-						<div className="media__btn media__btn--prev" onClick={() => swiper.slidePrev()}>
-							<img src={arrowPrevImg} alt="" />
-							<p>{leftTitle}</p>
-						</div>
-					) : (
-						<div className="media__btn"></div>
-					)}
-
-					<div className="media__title media__title--mobile">{activeTitle}</div>
-
-					{!swiper.isEnd ? (
-						<div className="media__btn media__btn--next" onClick={() => swiper.slideNext()}>
-							<img src={arrowNextImg} alt="" />
-							<p>{rightTitle}</p>
-						</div>
-					) : (
-						<div className="media__btn"></div>
-					)}
-				</div>
-			</div>
-		</section>
-	);
+              </>
+            );
+          })}
+        </Carousel>
+      </div>
+    </section>
+  );
 };
 
 export default MediaSlider;
