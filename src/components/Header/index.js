@@ -86,9 +86,9 @@ const Header = () => {
             <a href="/#portfolio" className="header__link">
               Portfolio
             </a>
-            {/* <a href="/#performance" className="header__link">
+            <a href="/#performance" className="header__link">
               Performance
-            </a> */}
+            </a>
             <a href="/#team" className="header__link">
               Team
             </a>

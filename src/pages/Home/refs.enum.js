@@ -4,4 +4,5 @@ export class ERefs {
   static Profile = "portfolio";
   static Team = "team";
   static Disclaimers = "disclaimers";
+  static Performance = "performance";
 }

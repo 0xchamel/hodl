@@ -100,14 +100,65 @@
   &__media {
     padding-top: 70px;
     &-article {
-      margin-top: 2rem !important;
       display: flex;
-      align-items: center;
+      align-items: stretch;
       justify-content: space-between;
       flex-wrap: wrap;
     }
     &-video {
       margin: 0 auto;
+    }
+  }
+  &__performance {
+    padding-top: 70px;
+
+    &-content {
+      position: relative;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      .timeline {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        color: $black;
+        font-size: 2rem;
+        font-style: italic;
+
+        ul {
+          list-style-type: disc;
+          margin-left: 4rem;
+        }
+
+        h1 {
+          font-size: 40px;
+          font-style: normal;
+          margin-top: 40px;
+          width: 90%;
+          text-align: center;
+          line-height: 48px;
+          color: $black;
+        }
+      }
+
+      .bottom {
+        position: absolute;
+        bottom: 2rem;
+        right: 10%;
+
+        h2 {
+          font-size: 40px;
+          line-height: 48px;
+          color: $black;
+        }
+
+        p {
+          margin-left: 5rem;
+        }
+      }
     }
   }
   &__disclaimers {
@@ -141,9 +192,39 @@
     &__main {
       padding-top: 155px;
     }
+    &__performance {
+      &-content {
+        .timeline {
+          font-size: 1.5rem;
+
+          ul {
+            list-style-type: disc;
+            margin-left: 4rem;
+          }
+
+          h1 {
+            font-size: 2rem;
+            width: 60%;
+            line-height: 2.5rem;
+          }
+        }
+
+        .bottom {
+          h2 {
+            font-size: 2rem;
+            line-height: 2.5rem;
+            color: $black;
+          }
+
+          p {
+            margin-left: 5rem;
+          }
+        }
+      }
+    }
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .home {
     &__main {
       padding: 20px 0;
@@ -179,6 +260,42 @@
 
       &-video {
         margin-top: 45px;
+      }
+      &-article {
+        margin-top: 2rem;
+      }
+    }
+    &__performance {
+      &-content {
+        .timeline {
+          font-size: 1rem;
+
+          ul {
+            list-style-type: disc;
+            margin-left: 4rem;
+          }
+
+          h1 {
+            font-size: 1.2rem;
+            width: 100%;
+            line-height: 1.5rem;
+            margin-top: 1rem;
+          }
+        }
+
+        .bottom {
+          right: 1.5rem;
+          bottom: 1.5rem;
+          h2 {
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+            color: $black;
+          }
+
+          p {
+            margin-left: 2rem;
+          }
+        }
       }
     }
   }

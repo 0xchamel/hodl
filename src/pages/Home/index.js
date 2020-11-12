@@ -7,12 +7,15 @@ import { Team, MediaSlider } from "../../components";
 
 import "./Home.scss";
 
+import performanceBackImg from "../../assets/img/performance/back.jpg";
 import decor_1 from "../../assets/img/decor/1.svg";
 import portfolioBtnImg from "../../assets/img/portfolio/btn.svg";
 import arrowBottom from "../../assets/img/arrow-next.svg";
 import portfolioArrowImg from "../../assets/img/portfolio/arrow.svg";
 import { ERefs } from "./refs.enum";
-// import Article from "../../components/Article";
+import Article from "../../components/Article";
+
+import articles from "../../constant/articles";
 
 const scrollToRef = (ref) =>
   window.scrollTo({
@@ -45,6 +48,7 @@ const HomePage = () => {
   const mediaRef = useRef(null);
   const teamRef = useRef(null);
   const disclaimersRef = useRef(null);
+  const performanceRef = useRef(null);
 
   const executeScroll = (type) => {
     switch (type) {
@@ -58,6 +62,8 @@ const HomePage = () => {
         return scrollToRef(teamRef);
       case ERefs.Disclaimers:
         return scrollToRef(disclaimersRef);
+      case ERefs.Performance:
+        return scrollToRef(performanceRef);
       default:
         return;
     }
@@ -138,35 +144,59 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      {/* <section
+      <section
         id={"performance"}
-        className="home__portfolio"
-        ref={portfolioRef}
+        className="home__performance"
+        ref={performanceRef}
       >
-        <div className="row home__portfolio-row">
-          <h2 className="home__portfolio-title h2 h2--decor">Performance</h2>
-          <HighchartsReact highcharts={Highcharts} options={chartOptions} />
+        <div className="home__performance-row">
+          <h2 className="home__performance-title h2 h2--decor">Performance</h2>
+          <div className="home__performance-content">
+            <img src={performanceBackImg} alt="performance back" />
+            <div className="timeline">
+              <p>Time Line:</p>
+              <ul>
+                <li>Dragon's Vault began investing in June 2020</li>
+                <li>Dragon's Vault incorporates in Singapore Sep 2020</li>
+              </ul>
+              <h1>
+                Dragon's Vault innovative investment portfolio has experienced a
+                X% ROI since it's inception in June of 2020.
+              </h1>
+            </div>
+            <div className="bottom">
+              <h2>
+                Making Dragon's Vault one of the top
+                <br />
+                <p>performing investment funds globally period.</p>
+              </h2>
+            </div>
+          </div>
         </div>
-      </section> */}
+      </section>
       <div id={"team"} ref={teamRef}>
         <Team />
       </div>
       <section id={"media"} className="home__media" ref={mediaRef}>
         <div className="row">
-          <div className="h2 home__media-title h2--decor">Media Video</div>
+          <div className="h2 home__media-title h2--decor">Media</div>
           <div className="home__media-video">
             <MediaSlider />
           </div>
           {/* <div className="h2 home__media-title" style={{ marginTop: "2rem" }}>
             Articles
-          </div>
+          </div> */}
           <div className="home__media-article">
             {articles.map((item) => {
               return (
-                <Article description={item.description} image={item.image} />
+                <Article
+                  title={item.title}
+                  image={item.image}
+                  link={item.link}
+                />
               );
             })}
-          </div> */}
+          </div>
         </div>
         <div className="row"></div>
       </section>
