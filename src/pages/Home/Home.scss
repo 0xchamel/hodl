@@ -137,7 +137,7 @@
           font-size: 40px;
           font-style: normal;
           margin-top: 40px;
-          width: 90%;
+          width: 65%;
           text-align: center;
           line-height: 48px;
           color: $black;
@@ -204,7 +204,7 @@
 
           h1 {
             font-size: 2rem;
-            width: 60%;
+            width: 100%;
             line-height: 2.5rem;
           }
         }
@@ -294,6 +294,39 @@
 
           p {
             margin-left: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  .home {
+    &__performance {
+      &-content {
+        .timeline {
+          font-size: 13px;
+          top: 1rem;
+          left: 1rem;
+
+          ul {
+            margin-left: 2rem;
+          }
+
+          h1 {
+            font-size: 13px;
+            line-height: 20px;
+          }
+        }
+
+        .bottom {
+          h2 {
+            font-size: 13px;
+            line-height: 20px;
+          }
+
+          p {
+            margin-left: 10px;
           }
         }
       }

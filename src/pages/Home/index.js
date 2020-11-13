@@ -160,8 +160,8 @@ const HomePage = () => {
                 <li>Dragon's Vault incorporates in Singapore Sep 2020</li>
               </ul>
               <h1>
-                Dragon's Vault innovative investment portfolio has experienced a
-                X% ROI since it's inception in June of 2020.
+                Dragon's Vault innovative investment portfolio is pacing to
+                achieve a 200% ROI in its first year of operations.
               </h1>
             </div>
             <div className="bottom">
