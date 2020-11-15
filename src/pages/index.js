@@ -1,5 +1,9 @@
 export { default as HomePage } from "./Home";
 export { default as HumanPage } from "./Human";
 export { default as CryptoPage } from "./Crypto";
+export { default as TermsPage } from "./Terms";
+export { default as ContestPage } from "./Contest";
+export { default as AuthPage } from "./Auth";
+export { default as ProfilePage } from "./Profile";
 export { default as CollectivePage } from "./Collective";
 export { default as LegacyPage } from "./Legacy";
