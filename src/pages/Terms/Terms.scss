@@ -1,0 +1,94 @@
+@import "../../styles/var";
+
+.terms {
+  &__main {
+    height: 100vh;
+    background: url(../../assets/img/main-home.jpg);
+    background-size: cover;
+    padding-top: 15vw;
+
+    &--description {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 25px;
+      line-height: 32px;
+      width: 580px;
+      margin: 3rem 0;
+    }
+
+    &--name {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 25px;
+      line-height: 32px;
+      width: 580px;
+      margin: 3rem 0 2rem 0;
+    }
+  }
+
+  .h1 {
+    max-width: 860px;
+    color: #ffffff;
+  }
+
+  &__conditions {
+    font-size: 18px;
+    line-height: 32px;
+    color: #405569;
+    margin-top: 7rem !important;
+    margin-bottom: 7rem !important;
+
+    ul {
+      margin: 1rem;
+
+      li {
+        margin-bottom: 0.5rem;
+        strong {
+          font-weight: bold;
+        }
+      }
+    }
+
+    span {
+      color: $yellow;
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+}
+@media only screen and (max-width: 600px) {
+  .terms {
+    padding: 0;
+    &__main {
+      background-position: center;
+    }
+
+    &__conditions {
+      margin-top: 3.5rem !important;
+      margin-bottom: 3rem !important;
+      ul {
+        margin-right: 0;
+      }
+    }
+
+    .row,
+    .h1 {
+      padding: 0 20px;
+    }
+
+    .title-top {
+      padding: 0;
+    }
+
+    .row {
+      margin-top: 50px;
+      font-weight: normal;
+    }
+
+    .h1 {
+      font-size: 50px;
+      line-height: 50px;
+    }
+  }
+}
