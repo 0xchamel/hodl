@@ -168,7 +168,7 @@ const HomePage = () => {
               <h2>
                 Making Dragon's Vault one of the top
                 <br />
-                <p>performing investment funds globally period.</p>
+                <p>performing investment funds globally</p>
               </h2>
             </div>
           </div>
